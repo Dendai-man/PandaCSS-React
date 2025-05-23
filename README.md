@@ -54,11 +54,17 @@ PandaCSS-React/
 ├── public/              # Static assets
 ├── src/                 # Source code
 │   ├── components/      # React components
-│   │   ├── Typography.tsx     # Typography component using the typography recipe
-│   │   └── Flex.tsx           # Flex component using the flex recipe
-│   ├── styles/          # Theme configuration
+│   ├── styles/          # Theme and style configuration
 │   │   ├── theme.ts           # Theme token values
-│   │   └── themeConstants.ts  # Theme constant definitions
+│   │   ├── themeConstants.ts  # Theme constant definitions
+│   │   └── libs/              # Style abstractions
+│   │       └── recipes/       # Recipe abstractions
+│   │           ├── cTypography/  # Typography recipe abstraction
+│   │           │   ├── index.ts           # Exports the typography recipe
+│   │           │   └── cTypography.stories.tsx  # Storybook examples
+│   │           └── cFlex/        # Flex recipe abstraction
+│   │               ├── index.ts           # Exports the flex recipe
+│   │               └── cFlex.stories.tsx  # Storybook examples
 │   ├── packages/        # Panda CSS configuration
 │   │   └── panda/
 │   │       ├── tokens.ts      # Token configuration for PandaCSS
@@ -84,16 +90,16 @@ The typography recipe provides a consistent way to apply typography styles acros
 - Different font sizes, weights, and line heights
 - Color variants
 
-Example usage:
+Example usage (direct HTML elements with className):
 
 ```tsx
-<Typography name="JP1L_48_Bold" color="black">
+<h1 className={cTypography({ name: "JP1L_48_Bold", color: "black" })}>
   Large Bold Text
-</Typography>
+</h1>
 
-<Typography name="JP1L_32_Bold" color="vividPink">
+<p className={cTypography({ name: "JP1L_32_Bold", color: "vividPink" })}>
   Medium Bold Text with Color
-</Typography>
+</p>
 ```
 
 ## Flex Recipe
@@ -106,15 +112,29 @@ The flex recipe provides a simple way to create flexible layouts. It includes:
 - Wrap variants (noWrap, wrap, wrapReverse)
 - Gap variants (0, 1, 2, 4, 6, 8, 12, 16)
 
-Example usage:
+Example usage (direct HTML elements with className):
 
 ```tsx
-<Flex direction="row" justify="between" align="center" gap={4}>
+<div className={cFlex({ direction: "row", justify: "between", align: "center", gap: 4 })}>
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
-</Flex>
+</div>
 ```
+
+## Design System Architecture
+
+This project uses a loosely coupled approach to the design system:
+
+1. **Recipe Definitions**: The core recipes are defined in the Panda CSS configuration
+2. **Abstraction Layer**: An abstraction layer (`src/styles/libs/recipes`) provides a clean API for consuming the recipes
+3. **Direct HTML Usage**: Instead of using composition components, we apply styles directly to HTML elements via className
+
+This approach has several benefits:
+- Keeps the DOM structure clean and semantic (using native HTML elements)
+- Reduces the number of wrapper components
+- Makes it easier to customize styles for specific use cases
+- Creates a clear separation between the styling system and the application code
 
 ## License
 
