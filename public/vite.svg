@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Panda CSS + React</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle fill="#61DAFB" cx="16" cy="16" r="16"></circle>
+        <path d="M16,10 C18.7614,10 21,12.2386 21,15 C21,17.7614 18.7614,20 16,20 C13.2386,20 11,17.7614 11,15 C11,12.2386 13.2386,10 16,10 Z M16,12 C14.3431,12 13,13.3431 13,15 C13,16.6569 14.3431,18 16,18 C17.6569,18 19,16.6569 19,15 C19,13.3431 17.6569,12 16,12 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>
