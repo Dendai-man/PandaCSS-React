@@ -3,7 +3,7 @@ import { defineRecipe } from "@pandacss/dev";
 import {
   THEME_TYPOGRAPHY_KEYS,
   themeColorKeys,
-} from "../../../styles/theme";
+} from "../../../styles/themeConstants";
 
 export const typographyRecipe = defineRecipe({
   className: "typography",
