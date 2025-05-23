@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { css } from '../styled-system/css'
-import { flex, grid } from '../styled-system/patterns'
+import { flex } from '../styled-system/patterns'
 import { cTypography } from './styles/libs/recipes/cTypography'
 import { cFlex } from './styles/libs/recipes/cFlex'
 
