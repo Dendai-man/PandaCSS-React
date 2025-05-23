@@ -11,10 +11,6 @@ export const typographyRecipe = defineRecipe({
     color: "black",
   },
   variants: {
-    className: {
-      // 空のオブジェクトを定義して、任意のclassNameを受け入れられるようにする
-      _: {},
-    },
     name: {
       [THEME_TYPOGRAPHY_KEYS.JP1L_48_Bold]: {
         fontFamily: "noto",
