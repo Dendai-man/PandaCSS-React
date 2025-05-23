@@ -1,8 +1,7 @@
 import { cFlex } from ".";
-import { cTypography } from "../cTypography";
-import { css } from "../../../../../../styled-system/css";
+import { css } from "../../../../../styled-system/css";
 
-import type { Story } from "@ladle/react";
+type Story = any;
 
 export const Row: Story = () => (
   <div className={cFlex({ direction: "row", gap: 4 })}>

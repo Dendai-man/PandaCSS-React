@@ -1,6 +1,5 @@
 import { css, cva } from "../../styled-system/css";
 import { THEME_TYPOGRAPHY_KEYS, themeColorKeys } from "./themeConstants";
-import { theme } from "./theme";
 
 // タイポグラフィスタイルを直接取得するためのユーティリティ関数
 export const getTypographyStyle = (

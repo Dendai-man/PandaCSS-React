@@ -1,6 +1,6 @@
 import { cTypography } from ".";
 
-import type { Story } from "@ladle/react";
+type Story = any;
 
 export const JP1L_48_Bold: Story = () => (
   <p className={cTypography({ name: "JP1L_48_Bold" })}>JP1L_48_Bold</p>
