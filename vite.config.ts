@@ -10,10 +10,14 @@ export default defineConfig({
     strictPort: true,
     hmr: {
       clientPort: 443,
-      host: 'work-1-pxpjarglhragzizr.prod-runtime.all-hands.dev',
+      host: 'work-1-brhfplzsaaixawge.prod-runtime.all-hands.dev',
     },
     cors: {
       origin: '*',
     },
+    allowedHosts: [
+      'work-1-brhfplzsaaixawge.prod-runtime.all-hands.dev',
+      'work-2-brhfplzsaaixawge.prod-runtime.all-hands.dev'
+    ],
   },
 })
