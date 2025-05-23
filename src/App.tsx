@@ -4,29 +4,31 @@ import { flex, grid } from '../styled-system/patterns'
 import { Card } from './components/Card'
 import { StyledExample } from './components/StyledExample'
 import { ButtonVariants } from './components/ButtonVariants'
+import { Typography } from './components/Typography'
+import { Flex } from './components/Flex'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className={css({ maxW: '1200px', mx: 'auto', p: '4' })}>
-      <h1 className={css({ fontSize: '2xl', fontWeight: 'bold', mb: '4' })}>
+      <Typography name="JP1L_32_Bold" color="black">
         Panda CSS + React
-      </h1>
+      </Typography>
       
       <div className={flex({ direction: 'column', gap: '8' })}>
-        <p className={css({ color: 'gray.700' })}>
+        <Typography name="JP1L_16_Regular" color="paleBlack">
           This is a minimal setup for Panda CSS with React.
-        </p>
+        </Typography>
         
         <button
           className={css({
-            bg: 'blue.500',
+            bg: 'purple',
             color: 'white',
             px: '4',
             py: '2',
             borderRadius: 'md',
-            _hover: { bg: 'blue.600' },
+            _hover: { bg: 'graphPurple' },
             width: 'fit-content'
           })}
           onClick={() => setCount((count) => count + 1)}
@@ -34,10 +36,10 @@ function App() {
           Count is {count}
         </button>
 
-        <div className={css({ border: '1px solid', borderColor: 'gray.200', p: '4', borderRadius: 'md' })}>
-          <h2 className={css({ fontSize: 'xl', fontWeight: 'semibold', mb: '4' })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
+          <Typography name="JP1L_24_Bold" color="black" className={css({ mb: '4' })}>
             CSS Function Approach
-          </h2>
+          </Typography>
           <div className={grid({ columns: { base: 1, md: 2, lg: 3 }, gap: '4' })}>
             <Card 
               title="Panda CSS" 
@@ -54,18 +56,71 @@ function App() {
           </div>
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'gray.200', p: '4', borderRadius: 'md' })}>
-          <h2 className={css({ fontSize: 'xl', fontWeight: 'semibold', mb: '4' })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
+          <Typography name="JP1L_24_Bold" color="black" className={css({ mb: '4' })}>
             JSX Components Approach
-          </h2>
+          </Typography>
           <StyledExample />
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'gray.200', p: '4', borderRadius: 'md' })}>
-          <h2 className={css({ fontSize: 'xl', fontWeight: 'semibold', mb: '4' })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
+          <Typography name="JP1L_24_Bold" color="black" className={css({ mb: '4' })}>
             Component Variant API (cva) Approach
-          </h2>
+          </Typography>
           <ButtonVariants />
+        </div>
+
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
+          <Typography name="JP1L_24_Bold" color="black" className={css({ mb: '4' })}>
+            Typography Recipe Examples
+          </Typography>
+          <Flex direction="column" gap={4}>
+            <Typography name="JP1L_48_Bold" color="black">JP1L_48_Bold</Typography>
+            <Typography name="JP1L_32_Bold" color="vividPink">JP1L_32_Bold with vividPink</Typography>
+            <Typography name="JP1L_24_Bold" color="purple">JP1L_24_Bold with purple</Typography>
+            <Typography name="JP1L_20_Bold" color="paleBlue">JP1L_20_Bold with paleBlue</Typography>
+            <Typography name="JP1L_16_Bold" color="errorRed">JP1L_16_Bold with errorRed</Typography>
+            <Typography name="JP1L_16_Medium" color="black">JP1L_16_Medium</Typography>
+            <Typography name="JP1L_16_Regular" color="black">JP1L_16_Regular</Typography>
+            <Typography name="EN_56_Bold" color="black">EN_56_Bold</Typography>
+            <Typography name="EN_32_SemiBold" color="black">EN_32_SemiBold</Typography>
+          </Flex>
+        </div>
+
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
+          <Typography name="JP1L_24_Bold" color="black" className={css({ mb: '4' })}>
+            Flex Recipe Examples
+          </Typography>
+          <Flex direction="column" gap={8}>
+            <div>
+              <Typography name="JP1L_16_Bold" color="black" className={css({ mb: '2' })}>Row with space-between</Typography>
+              <Flex justify="between" align="center" className={css({ bg: 'palePurple', p: '4', borderRadius: 'md' })}>
+                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
+                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
+                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
+              </Flex>
+            </div>
+            
+            <div>
+              <Typography name="JP1L_16_Bold" color="black" className={css({ mb: '2' })}>Column with center alignment</Typography>
+              <Flex direction="column" align="center" gap={4} className={css({ bg: 'thinPink', p: '4', borderRadius: 'md' })}>
+                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
+                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
+                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
+              </Flex>
+            </div>
+            
+            <div>
+              <Typography name="JP1L_16_Bold" color="black" className={css({ mb: '2' })}>Wrap with gap</Typography>
+              <Flex wrap="wrap" gap={4} className={css({ bg: 'thinBlue', p: '4', borderRadius: 'md' })}>
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <div key={i} className={css({ bg: 'paleBlue', p: '4', color: 'black', borderRadius: 'md', width: '100px' })}>
+                    Item {i + 1}
+                  </div>
+                ))}
+              </Flex>
+            </div>
+          </Flex>
         </div>
       </div>
     </div>

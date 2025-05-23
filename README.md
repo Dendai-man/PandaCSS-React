@@ -1,12 +1,16 @@
-# Panda CSS + React
+# Panda CSS + React Design System
 
-This repository demonstrates the integration of Panda CSS with React. It serves as a reference for a presentation on Panda CSS + React design patterns.
+This repository demonstrates the integration of Panda CSS with React, implementing a comprehensive design system. It serves as a reference for a presentation on Panda CSS + React design patterns.
 
 ## Features
 
 - React with TypeScript
 - Panda CSS for styling
 - Vite for fast development and building
+- Custom theme tokens for colors, typography, and spacing
+- Typography recipe with Japanese and English font variants
+- Flex layout recipe for easy layout composition
+- React components that utilize the design system
 
 ## Getting Started
 
@@ -50,12 +54,66 @@ PandaCSS-React/
 ├── public/              # Static assets
 ├── src/                 # Source code
 │   ├── components/      # React components
+│   │   ├── Typography.tsx     # Typography component using the typography recipe
+│   │   └── Flex.tsx           # Flex component using the flex recipe
+│   ├── styles/          # Theme configuration
+│   │   ├── theme.ts           # Theme token values
+│   │   └── themeConstants.ts  # Theme constant definitions
+│   ├── packages/        # Panda CSS configuration
+│   │   └── panda/
+│   │       ├── tokens.ts      # Token configuration for PandaCSS
+│   │       ├── utilities.ts   # Utility styles configuration
+│   │       ├── conditions.ts  # Conditional styles configuration
+│   │       └── recipes/
+│   │           ├── typographyRecipe.ts  # Typography recipe
+│   │           └── flexRecipe.ts        # Flex layout recipe
 │   ├── App.tsx          # Main application component
 │   └── main.tsx         # Entry point
 ├── styled-system/       # Generated Panda CSS files
 ├── panda.config.ts      # Panda CSS configuration
 ├── tsconfig.json        # TypeScript configuration
 └── vite.config.ts       # Vite configuration
+```
+
+## Typography Recipe
+
+The typography recipe provides a consistent way to apply typography styles across the application. It includes:
+
+- Japanese font variants (Noto Sans JP)
+- English font variants (Montserrat)
+- Different font sizes, weights, and line heights
+- Color variants
+
+Example usage:
+
+```tsx
+<Typography name="JP1L_48_Bold" color="black">
+  Large Bold Text
+</Typography>
+
+<Typography name="JP1L_32_Bold" color="vividPink">
+  Medium Bold Text with Color
+</Typography>
+```
+
+## Flex Recipe
+
+The flex recipe provides a simple way to create flexible layouts. It includes:
+
+- Direction variants (row, column, rowReverse, columnReverse)
+- Alignment variants (start, center, end, stretch, baseline)
+- Justification variants (start, center, end, between, around, evenly)
+- Wrap variants (noWrap, wrap, wrapReverse)
+- Gap variants (0, 1, 2, 4, 6, 8, 12, 16)
+
+Example usage:
+
+```tsx
+<Flex direction="row" justify="between" align="center" gap={4}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</Flex>
 ```
 
 ## License
