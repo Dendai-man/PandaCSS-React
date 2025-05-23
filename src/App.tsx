@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import { css } from '../styled-system/css'
 import { flex, grid } from '../styled-system/patterns'
-import { Card } from './components/Card'
-import { StyledExample } from './components/StyledExample'
-import { ButtonVariants } from './components/ButtonVariants'
 import { cTypography } from './styles/libs/recipes/cTypography'
 import { cFlex } from './styles/libs/recipes/cFlex'
 
@@ -33,40 +30,6 @@ function App() {
         >
           Count is {count}
         </button>
-
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
-          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
-            CSS Function Approach
-          </h2>
-          <div className={grid({ columns: [1, null, 2, 3], gap: '4' })}>
-            <Card 
-              title="Panda CSS" 
-              description="A modern CSS-in-JS library with great developer experience." 
-            />
-            <Card 
-              title="React" 
-              description="A JavaScript library for building user interfaces." 
-            />
-            <Card 
-              title="TypeScript" 
-              description="A strongly typed programming language that builds on JavaScript." 
-            />
-          </div>
-        </div>
-
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
-          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
-            JSX Components Approach
-          </h2>
-          <StyledExample />
-        </div>
-
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
-          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
-            Component Variant API (cva) Approach
-          </h2>
-          <ButtonVariants />
-        </div>
 
         <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
           <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
