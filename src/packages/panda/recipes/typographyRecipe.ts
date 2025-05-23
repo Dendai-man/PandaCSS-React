@@ -3,7 +3,7 @@ import { defineRecipe } from "@pandacss/dev";
 import {
   THEME_TYPOGRAPHY_KEYS,
   themeColorKeys,
-} from "../../../styles/theme";
+} from "../../../styles/themeConstants";
 
 export const typographyRecipe = defineRecipe({
   className: "typography",
@@ -11,6 +11,10 @@ export const typographyRecipe = defineRecipe({
     color: "black",
   },
   variants: {
+    className: {
+      // 空のオブジェクトを定義して、任意のclassNameを受け入れられるようにする
+      _: {},
+    },
     name: {
       [THEME_TYPOGRAPHY_KEYS.JP1L_48_Bold]: {
         fontFamily: "noto",

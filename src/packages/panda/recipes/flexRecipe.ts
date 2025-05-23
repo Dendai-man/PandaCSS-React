@@ -6,6 +6,10 @@ export const flexRecipe = defineRecipe({
     display: "flex",
   },
   variants: {
+    className: {
+      // 空のオブジェクトを定義して、任意のclassNameを受け入れられるようにする
+      _: {},
+    },
     direction: {
       row: {
         flexDirection: "row",

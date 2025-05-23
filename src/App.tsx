@@ -11,7 +11,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className={css({ maxW: '1200px', mx: 'auto', p: '4' })}>
+    <div className={css({ maxWidth: '1200px', margin: '0 auto', padding: '4' })}>
       <h1 className={cTypography({ name: "JP1L_32_Bold", color: "black" })}>
         Panda CSS + React
       </h1>
@@ -23,12 +23,10 @@ function App() {
         
         <button
           className={css({
-            bg: 'purple',
+            backgroundColor: 'purple',
             color: 'white',
-            px: '4',
-            py: '2',
+            padding: '2 4',
             borderRadius: 'md',
-            _hover: { bg: 'graphPurple' },
             width: 'fit-content'
           })}
           onClick={() => setCount((count) => count + 1)}
@@ -36,11 +34,11 @@ function App() {
           Count is {count}
         </button>
 
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
-          <h2 className={cTypography({ name: "JP1L_24_Bold", color: "black", className: css({ mb: '4' }) })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
+          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
             CSS Function Approach
           </h2>
-          <div className={grid({ columns: { base: 1, md: 2, lg: 3 }, gap: '4' })}>
+          <div className={grid({ columns: [1, null, 2, 3], gap: '4' })}>
             <Card 
               title="Panda CSS" 
               description="A modern CSS-in-JS library with great developer experience." 
@@ -56,25 +54,25 @@ function App() {
           </div>
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
-          <h2 className={cTypography({ name: "JP1L_24_Bold", color: "black", className: css({ mb: '4' }) })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
+          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
             JSX Components Approach
           </h2>
           <StyledExample />
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
-          <h2 className={cTypography({ name: "JP1L_24_Bold", color: "black", className: css({ mb: '4' }) })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
+          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
             Component Variant API (cva) Approach
           </h2>
           <ButtonVariants />
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
-          <h2 className={cTypography({ name: "JP1L_24_Bold", color: "black", className: css({ mb: '4' }) })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
+          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
             Typography Recipe Examples
           </h2>
-          <div className={cFlex({ direction: "column", gap: 4 })}>
+          <div className={cFlex({ direction: "column", gap: "4" })}>
             <p className={cTypography({ name: "JP1L_48_Bold", color: "black" })}>JP1L_48_Bold</p>
             <p className={cTypography({ name: "JP1L_32_Bold", color: "vividPink" })}>JP1L_32_Bold with vividPink</p>
             <p className={cTypography({ name: "JP1L_24_Bold", color: "purple" })}>JP1L_24_Bold with purple</p>
@@ -87,34 +85,34 @@ function App() {
           </div>
         </div>
 
-        <div className={css({ border: '1px solid', borderColor: 'tableBorder', p: '4', borderRadius: 'md' })}>
-          <h2 className={cTypography({ name: "JP1L_24_Bold", color: "black", className: css({ mb: '4' }) })}>
+        <div className={css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })}>
+          <h2 className={`${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`}>
             Flex Recipe Examples
           </h2>
-          <div className={cFlex({ direction: "column", gap: 8 })}>
+          <div className={cFlex({ direction: "column", gap: "8" })}>
             <div>
-              <p className={cTypography({ name: "JP1L_16_Bold", color: "black", className: css({ mb: '2' }) })}>Row with space-between</p>
-              <div className={cFlex({ justify: "between", align: "center", className: css({ bg: 'palePurple', p: '4', borderRadius: 'md' }) })}>
-                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
-                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
-                <div className={css({ bg: 'purple', p: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
+              <p className={`${cTypography({ name: "JP1L_16_Bold", color: "black" })} ${css({ marginBottom: '2' })}`}>Row with space-between</p>
+              <div className={`${cFlex({ justify: "between", align: "center" })} ${css({ backgroundColor: 'palePurple', padding: '4', borderRadius: 'md' })}`}>
+                <div className={css({ backgroundColor: 'purple', padding: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
+                <div className={css({ backgroundColor: 'purple', padding: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
+                <div className={css({ backgroundColor: 'purple', padding: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
               </div>
             </div>
             
             <div>
-              <p className={cTypography({ name: "JP1L_16_Bold", color: "black", className: css({ mb: '2' }) })}>Column with center alignment</p>
-              <div className={cFlex({ direction: "column", align: "center", gap: 4, className: css({ bg: 'thinPink', p: '4', borderRadius: 'md' }) })}>
-                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
-                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
-                <div className={css({ bg: 'vividPink', p: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
+              <p className={`${cTypography({ name: "JP1L_16_Bold", color: "black" })} ${css({ marginBottom: '2' })}`}>Column with center alignment</p>
+              <div className={`${cFlex({ direction: "column", align: "center", gap: "4" })} ${css({ backgroundColor: 'thinPink', padding: '4', borderRadius: 'md' })}`}>
+                <div className={css({ backgroundColor: 'vividPink', padding: '4', color: 'white', borderRadius: 'md' })}>Item 1</div>
+                <div className={css({ backgroundColor: 'vividPink', padding: '4', color: 'white', borderRadius: 'md' })}>Item 2</div>
+                <div className={css({ backgroundColor: 'vividPink', padding: '4', color: 'white', borderRadius: 'md' })}>Item 3</div>
               </div>
             </div>
             
             <div>
-              <p className={cTypography({ name: "JP1L_16_Bold", color: "black", className: css({ mb: '2' }) })}>Wrap with gap</p>
-              <div className={cFlex({ wrap: "wrap", gap: 4, className: css({ bg: 'thinBlue', p: '4', borderRadius: 'md' }) })}>
+              <p className={`${cTypography({ name: "JP1L_16_Bold", color: "black" })} ${css({ marginBottom: '2' })}`}>Wrap with gap</p>
+              <div className={`${cFlex({ wrap: "wrap", gap: "4" })} ${css({ backgroundColor: 'thinBlue', padding: '4', borderRadius: 'md' })}`}>
                 {Array.from({ length: 10 }).map((_, i) => (
-                  <div key={i} className={css({ bg: 'paleBlue', p: '4', color: 'black', borderRadius: 'md', width: '100px' })}>
+                  <div key={i} className={css({ backgroundColor: 'paleBlue', padding: '4', color: 'black', borderRadius: 'md', width: '100px' })}>
                     Item {i + 1}
                   </div>
                 ))}
