@@ -7,6 +7,27 @@ import { cFlex } from './styles/libs/recipes/cFlex'
 // Container styles
 const containerStyles = css({ maxWidth: '1200px', margin: '0 auto', padding: '4' })
 
+// Typography styles
+const headingStyles = cTypography({ name: "JP1L_32_Bold", color: "black" })
+const descriptionStyles = cTypography({ name: "JP1L_16_Regular", color: "paleBlack" })
+const sectionTitleStyles = `${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`
+
+// Typography examples styles
+const typographyContainerStyles = cFlex({ direction: "column", gap: "4" })
+const jp1l48BoldStyles = cTypography({ name: "JP1L_48_Bold", color: "black" })
+const jp1l32BoldPinkStyles = cTypography({ name: "JP1L_32_Bold", color: "vividPink" })
+const jp1l24BoldPurpleStyles = cTypography({ name: "JP1L_24_Bold", color: "purple" })
+const jp1l20BoldBlueStyles = cTypography({ name: "JP1L_20_Bold", color: "paleBlue" })
+const jp1l16BoldRedStyles = cTypography({ name: "JP1L_16_Bold", color: "errorRed" })
+const jp1l16MediumStyles = cTypography({ name: "JP1L_16_Medium", color: "black" })
+const jp1l16RegularStyles = cTypography({ name: "JP1L_16_Regular", color: "black" })
+const en56BoldStyles = cTypography({ name: "EN_56_Bold", color: "black" })
+const en32SemiBoldStyles = cTypography({ name: "EN_32_SemiBold", color: "black" })
+
+// Layout styles
+const contentContainerStyles = flex({ direction: 'column', gap: '8' })
+const flexExamplesContainerStyles = cFlex({ direction: "column", gap: "8" })
+
 // Button styles
 const buttonStyles = css({
   backgroundColor: 'purple',
@@ -18,9 +39,6 @@ const buttonStyles = css({
 
 // Card container styles
 const cardContainerStyles = css({ border: '1px solid', borderColor: 'tableBorder', padding: '4', borderRadius: 'md' })
-
-// Typography section styles
-const sectionTitleStyles = `${cTypography({ name: "JP1L_24_Bold", color: "black" })} ${css({ marginBottom: '4' })}`
 
 // Flex example styles
 const rowLabelStyles = `${cTypography({ name: "JP1L_16_Bold", color: "black" })} ${css({ marginBottom: '2' })}`
@@ -39,12 +57,12 @@ function App() {
 
   return (
     <div className={containerStyles}>
-      <h1 className={cTypography({ name: "JP1L_32_Bold", color: "black" })}>
+      <h1 className={headingStyles}>
         Panda CSS + React
       </h1>
       
-      <div className={flex({ direction: 'column', gap: '8' })}>
-        <p className={cTypography({ name: "JP1L_16_Regular", color: "paleBlack" })}>
+      <div className={contentContainerStyles}>
+        <p className={descriptionStyles}>
           This is a minimal setup for Panda CSS with React.
         </p>
         
@@ -59,16 +77,16 @@ function App() {
           <h2 className={sectionTitleStyles}>
             Typography Recipe Examples
           </h2>
-          <div className={cFlex({ direction: "column", gap: "4" })}>
-            <p className={cTypography({ name: "JP1L_48_Bold", color: "black" })}>JP1L_48_Bold</p>
-            <p className={cTypography({ name: "JP1L_32_Bold", color: "vividPink" })}>JP1L_32_Bold with vividPink</p>
-            <p className={cTypography({ name: "JP1L_24_Bold", color: "purple" })}>JP1L_24_Bold with purple</p>
-            <p className={cTypography({ name: "JP1L_20_Bold", color: "paleBlue" })}>JP1L_20_Bold with paleBlue</p>
-            <p className={cTypography({ name: "JP1L_16_Bold", color: "errorRed" })}>JP1L_16_Bold with errorRed</p>
-            <p className={cTypography({ name: "JP1L_16_Medium", color: "black" })}>JP1L_16_Medium</p>
-            <p className={cTypography({ name: "JP1L_16_Regular", color: "black" })}>JP1L_16_Regular</p>
-            <p className={cTypography({ name: "EN_56_Bold", color: "black" })}>EN_56_Bold</p>
-            <p className={cTypography({ name: "EN_32_SemiBold", color: "black" })}>EN_32_SemiBold</p>
+          <div className={typographyContainerStyles}>
+            <p className={jp1l48BoldStyles}>JP1L_48_Bold</p>
+            <p className={jp1l32BoldPinkStyles}>JP1L_32_Bold with vividPink</p>
+            <p className={jp1l24BoldPurpleStyles}>JP1L_24_Bold with purple</p>
+            <p className={jp1l20BoldBlueStyles}>JP1L_20_Bold with paleBlue</p>
+            <p className={jp1l16BoldRedStyles}>JP1L_16_Bold with errorRed</p>
+            <p className={jp1l16MediumStyles}>JP1L_16_Medium</p>
+            <p className={jp1l16RegularStyles}>JP1L_16_Regular</p>
+            <p className={en56BoldStyles}>EN_56_Bold</p>
+            <p className={en32SemiBoldStyles}>EN_32_SemiBold</p>
           </div>
         </div>
 
@@ -76,7 +94,7 @@ function App() {
           <h2 className={sectionTitleStyles}>
             Flex Recipe Examples
           </h2>
-          <div className={cFlex({ direction: "column", gap: "8" })}>
+          <div className={flexExamplesContainerStyles}>
             <div>
               <p className={rowLabelStyles}>Row with space-between</p>
               <div className={rowContainerStyles}>
